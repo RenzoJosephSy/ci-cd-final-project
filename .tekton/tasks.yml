@@ -47,12 +47,12 @@ spec:
     type: string
     default: "-v"
  steps:
- - name: nosetests
-   image: python:3.9-slim
-   workingdir: $(workspace.source.path)
-   script: |
-    #!/bin/bash
-    set -e
-    python -m pip install --upgrade pip wheel
-    pip install -r requirements.txt
-   nosetests $(params.args)
+  - name: nosetests
+    image: python:3.9-slim
+    workingdir: $(workspace.source.path)
+    script: |
+     #!/bin/bash
+     set -e
+     python -m pip install --upgrade pip wheel
+     pip install -r requirements.txt
+     nosetests $(params.args)
